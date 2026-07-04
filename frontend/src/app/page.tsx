@@ -87,7 +87,7 @@ export default function Home() {
             {navLinks.map((link) => (
               <span
                 key={link}
-                className="text-sm text-muted-foreground cursor-default font-medium"
+                className="text-sm text-muted-foreground hover:text-foreground cursor-pointer transition-colors font-medium"
               >
                 {link}
               </span>
