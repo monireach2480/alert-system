@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { motion, AnimatePresence } from "framer-motion"
@@ -15,6 +15,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { inquirySchema, InquiryFormData } from "@/lib/validations"
 import { submitInquiry } from "@/lib/api"
+
+
 
 function FieldError({ message }: { message?: string }) {
   return (
@@ -36,6 +38,9 @@ function FieldError({ message }: { message?: string }) {
 
 export function InquiryForm() {
   const [isSuccess, setIsSuccess] = useState(false)
+    useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/health`).catch(() => {})
+  }, [])
 
   const {
     register,

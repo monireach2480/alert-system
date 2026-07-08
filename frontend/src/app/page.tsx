@@ -10,6 +10,9 @@ import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/f
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+
+
+
 const features = [
   {
     icon: Zap,
